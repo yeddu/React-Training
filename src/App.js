@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Message from './components/Message'
 import Counter from './components/Counter'
@@ -8,6 +8,7 @@ import PostForm from './components/PostForm'
 import Form from './components/Form'
 import EventBind from './components/EventBind'
 import Greet from './components/Greet'
+import Hookcounter from './components/HookCounter';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       {/* <PostList/> */}
       <PostForm/>
       <EventBind/>
+      <Hookcounter/>
       {/* <Form/> */}
     </div>
   );
