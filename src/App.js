@@ -8,7 +8,8 @@ import PostForm from './components/PostForm'
 import Form from './components/Form'
 import EventBind from './components/EventBind'
 import Greet from './components/Greet'
-import Hookcounter from './components/HookCounter';
+import Hookcounter from './components/HookCounter'
+import Hookcounter2 from './components/HookCounter2'
 
 function App() {
   return (
@@ -24,9 +25,10 @@ function App() {
       {/* <Counter/> */}
       {/* <NameList/> */}
       {/* <PostList/> */}
-      <PostForm/>
-      <EventBind/>
-      <Hookcounter/>
+      {/* <PostForm/> */}
+      {/* <EventBind/> */}
+      {/* <Hookcounter/> */}
+      <Hookcounter2/>
       {/* <Form/> */}
     </div>
   );
