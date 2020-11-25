@@ -10,9 +10,13 @@ import EventBind from './components/EventBind'
 import Greet from './components/Greet'
 import Hookcounter from './components/HookCounter'
 import Hookcounter2 from './components/HookCounter2'
+import CakeContainer from './components/CakeContainer'
+import {Provider} from 'react-redux'
+import store from './redux/store'
 
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
       {/* <Greet name="Bruce" heroName="Batman">
           <p>This is children props</p>
@@ -28,9 +32,11 @@ function App() {
       {/* <PostForm/> */}
       {/* <EventBind/> */}
       {/* <Hookcounter/> */}
-      <Hookcounter2/>
+      {/* <Hookcounter2/> */}
+      <CakeContainer/>
       {/* <Form/> */}
     </div>
+    </Provider>
   );
 }
 
