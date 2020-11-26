@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import Message from './components/Message'
 import Counter from './components/Counter'
 import NameList from './components/NameList'
@@ -14,6 +14,7 @@ import CakeContainer from './components/CakeContainer'
 import {Provider} from 'react-redux'
 import store from './redux/store'
 import Icecreamcontainer from './components/IceCreamContainer';
+import ButtonWithScss from './components/ButtonWithScss'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
       {/* <Hookcounter2/> */}
       <CakeContainer/>
       <Icecreamcontainer/>
+      <ButtonWithScss/>
       {/* <Form/> */}
     </div>
     </Provider>
