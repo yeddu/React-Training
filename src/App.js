@@ -13,6 +13,7 @@ import Hookcounter2 from './components/HookCounter2'
 import CakeContainer from './components/CakeContainer'
 import {Provider} from 'react-redux'
 import store from './redux/store'
+import Icecreamcontainer from './components/IceCreamContainer';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
       {/* <Hookcounter/> */}
       {/* <Hookcounter2/> */}
       <CakeContainer/>
+      <Icecreamcontainer/>
       {/* <Form/> */}
     </div>
     </Provider>
