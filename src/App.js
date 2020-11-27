@@ -15,6 +15,8 @@ import {Provider} from 'react-redux'
 import store from './redux/store'
 import Icecreamcontainer from './components/IceCreamContainer';
 import ButtonWithScss from './components/ButtonWithScss'
+import CrudForm from './components/CrudForm'
+import CrudList from './components/CrudList'
 
 function App() {
   return (
@@ -35,9 +37,11 @@ function App() {
       {/* <EventBind/> */}
       {/* <Hookcounter/> */}
       {/* <Hookcounter2/> */}
-      <CakeContainer/>
-      <Icecreamcontainer/>
-      <ButtonWithScss/>
+      {/* <CakeContainer/> */}
+      {/* <Icecreamcontainer/> */}
+      {/* <ButtonWithScss/> */}
+      <CrudForm/>
+      <CrudList/>
       {/* <Form/> */}
     </div>
     </Provider>
