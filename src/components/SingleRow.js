@@ -6,10 +6,12 @@ class SingleRow extends Component {
   return (
     <>
         <tr>
+            <td><img src={this.props.list.profile_pic} height="50" width=""/></td>
             <td>{this.props.list.name}</td>
             <td>{this.props.list.email}</td>
             <td>{this.props.list.qualification}</td>
             <td>{this.props.list.gender}</td>
+            <td>{this.props.list.hobbies}</td>
             <td>{this.props.list.comments}</td>
             <td><button className="btn btn-danger"
                     onClick={()=>this.props.dispatch({type:'DELETE_ROW',id:this.props.list.id})}>

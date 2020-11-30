@@ -8,10 +8,12 @@ class CrudList extends Component {
     <div className="container">
         <div className="table-responsive">
             <table className="table">
+                <th></th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Qualification</th>
                 <th>Gender</th>
+                <th>Hobbies</th>
                 <th>Comments</th>
                 <th>Actions</th>
             <tbody>
