@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 class PostList extends Component {
 	constructor(props) {
 		super(props)
@@ -26,10 +27,10 @@ class PostList extends Component {
 	render() {
 		const { posts, errorMsg } = this.state
 		return (
-			<div>
+			<div className="container">
 				List of posts
 				{posts.length
-					? posts.map(post => <div key={post.id}>{post.title}</div>)
+					? posts.map(post => <div key={post.id}><Link to={`postdetails/${post.id}`}>{post.title}</Link></div>)
           : null}
         {errorMsg ? <div>{errorMsg}</div> : null}
 			</div>

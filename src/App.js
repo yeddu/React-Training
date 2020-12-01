@@ -16,36 +16,60 @@ import store from './redux/store'
 import Icecreamcontainer from './components/IceCreamContainer';
 import ButtonWithScss from './components/ButtonWithScss'
 import CrudForm from './components/CrudForm'
-import CrudList from './components/CrudList'
+// import CrudList from './components/CrudList'
+import PostDetails from './components/PostDetails'
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 
 function App() {
   return (
+    <Router>
     <Provider store={store}>
-    <div className="App">
-      {/* <Greet name="Bruce" heroName="Batman">
-          <p>This is children props</p>
-        </Greet>
-        <Greet name="Clark" heroName="Superman">
-          <button>Action</button>
-        </Greet>
-        <Greet name="Diana" heroName="Wonder Woman" /> */}
-      {/* <Message/> */}
-      {/* <Counter/> */}
-      {/* <NameList/> */}
-      {/* <PostList/> */}
-      {/* <PostForm/> */}
-      {/* <EventBind/> */}
-      {/* <Hookcounter/> */}
-      {/* <Hookcounter2/> */}
-      {/* <CakeContainer/> */}
-      {/* <Icecreamcontainer/> */}
-      {/* <ButtonWithScss/> */}
-      <CrudForm/>
-      <br/><br/><br/>
-      <CrudList/>
-      {/* <Form/> */}
-    </div>
-    </Provider>
+      <div className="container">
+        {/* <Greet name="Bruce" heroName="Batman">
+            <p>This is children props</p>
+          </Greet>
+          <Greet name="Clark" heroName="Superman">
+            <button>Action</button>
+          </Greet>
+          <Greet name="Diana" heroName="Wonder Woman" /> */}
+        {/* <Message/> */}
+        {/* <Counter/> */}
+        {/* <NameList/> */}
+        {/* <PostList/> */}
+        {/* <PostForm/> */}
+        {/* <EventBind/> */}
+        {/* <Hookcounter/> */}
+        {/* <Hookcounter2/> */}
+        {/* <CakeContainer/> */}
+        {/* <Icecreamcontainer/> */}
+        {/* <ButtonWithScss/> */}
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link to="/"  className="nav-link">Home</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/posts" className="nav-link">Posts</Link>
+              </li>
+              <li className="nav-item">
+              < Link to="/details" className="nav-link">Profile</Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        
+        <Switch>
+          <Route path="/" exact></Route>
+          <Route path="/details" component={CrudForm}></Route>
+          <Route path="/posts" exact component={PostList}></Route>
+          <Route path="/postdetails/:id" component={PostDetails}></Route>
+        </Switch>
+        {/* <CrudForm/> */}
+        {/* <Form/> */}
+      </div>
+      </Provider>
+    </Router>
   );
 }
 

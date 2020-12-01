@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from 'react-router-dom'
 
 function NameList() {
   const names = ['Bruce', 'Clark', 'Diana'];
@@ -7,6 +8,9 @@ function NameList() {
       {
         names.map(name => <h2>{name}</h2>)
       }
+      <ul>
+        <li><Link to="details">Details</Link></li>
+      </ul>
     </div>
   )
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {addFormData} from '../redux'
-
+import CrudList from './CrudList'
 class CrudForm extends Component {
     constructor(){
         super();
@@ -79,7 +79,6 @@ class CrudForm extends Component {
         const { name, email, comments, qualification } = this.state
         return (
             <div className="container">
-                <h2>Please Fill Details</h2>
                 <form onSubmit={this.submitHandler} encType="multipart/form-data">
                     <div className="row col-12">
                         <div className="col-6">
@@ -160,6 +159,8 @@ class CrudForm extends Component {
                     </div>
                 </div>
                 </form>
+            <br/><br/><br/>
+            <CrudList/>
             </div>
         );
     }
