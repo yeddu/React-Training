@@ -19,51 +19,26 @@ import CrudForm from './components/CrudForm'
 // import CrudList from './components/CrudList'
 import PostDetails from './components/PostDetails'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import Nav from './components/Pages/Nav';
+import Home from './components/Pages/Home'
+import PublicRoute from './utils/PublicRoute';
+import PrivateRoute from './utils/PrivateRoute';
+import SignIn from './components/Pages/SignIn';
+import Dashboard from './components/Pages/Dashboard';
 
 function App() {
   return (
     <Router>
     <Provider store={store}>
       <div className="container">
-        {/* <Greet name="Bruce" heroName="Batman">
-            <p>This is children props</p>
-          </Greet>
-          <Greet name="Clark" heroName="Superman">
-            <button>Action</button>
-          </Greet>
-          <Greet name="Diana" heroName="Wonder Woman" /> */}
-        {/* <Message/> */}
-        {/* <Counter/> */}
-        {/* <NameList/> */}
-        {/* <PostList/> */}
-        {/* <PostForm/> */}
-        {/* <EventBind/> */}
-        {/* <Hookcounter/> */}
-        {/* <Hookcounter2/> */}
-        {/* <CakeContainer/> */}
-        {/* <Icecreamcontainer/> */}
-        {/* <ButtonWithScss/> */}
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link to="/"  className="nav-link">Home</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/posts" className="nav-link">Posts</Link>
-              </li>
-              <li className="nav-item">
-              < Link to="/details" className="nav-link">Profile</Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        
+        <Nav/>
         <Switch>
-          <Route path="/" exact></Route>
-          <Route path="/details" component={CrudForm}></Route>
-          <Route path="/posts" exact component={PostList}></Route>
-          <Route path="/postdetails/:id" component={PostDetails}></Route>
+          <PublicRoute path="/" exact component={Home}></PublicRoute>
+          <PublicRoute path="/signin" component={SignIn} />
+          <PrivateRoute path="/dashboard" exact component={Dashboard}></PrivateRoute>
+          <PrivateRoute path="/details" component={CrudForm}></PrivateRoute>
+          <PrivateRoute path="/posts" exact component={PostList}></PrivateRoute>
+          <PrivateRoute path="/postdetails/:id" component={PostDetails}></PrivateRoute>
         </Switch>
         {/* <CrudForm/> */}
         {/* <Form/> */}
