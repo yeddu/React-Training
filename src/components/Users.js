@@ -1,23 +1,24 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Link, Route, BrowserRouter as Router} from 'react-router-dom'
-import PostDetails from './PostDetails'
-class PostList extends Component {
+import UserDetails from './UserDetails'
+
+class Users extends Component {
 	constructor(props) {
 		super(props)
 
 		this.state = {
-      posts: [],
+      users: [],
       errorMsg: ''
 		}
 	}
 
 	componentDidMount() {
 		axios
-			.get('https://jsonplaceholder.typicode.com/posts')
+			.get('https://jsonplaceholder.typicode.com/users')
 			.then(response => {
 				console.log(response)
-				this.setState({ posts: response.data })
+				this.setState({ users: response.data })
 			})
 			.catch(error => {
         console.log(error)
@@ -26,21 +27,21 @@ class PostList extends Component {
 	}
 
 	render() {
-		const { posts, errorMsg } = this.state
-		let match = this.props.match
+		const { users, errorMsg } = this.state
+		//let match = this.props.match
 		return (
 			<Router>
 				<div className="container">
-					List of posts
-					{posts.length
-									? posts.slice(0, 10).map(post => <div key={post.id}><Link to={`/posts/${post.id}`}><p><strong>{post.title}</strong></p></Link></div>)
+					List of Users
+					{users.length
+									? users.map(user => <div key={user.id}><Link to={`/users/${user.id}`}><p><strong>{user.name}</strong></p></Link></div>)
 						: null}
 						{errorMsg ? <div>{errorMsg}</div> : null}
-					<Route path={`/posts/:id`} render={routerProps => <PostDetails {...routerProps}  posts={posts} />} />
+					<Route path={`/users/:id`} render={routerProps => <UserDetails {...routerProps}  users={users} />} />
 				</div>
 		</Router>
 		)
 	}
 }
 
-export default PostList
+export default Users

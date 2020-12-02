@@ -25,8 +25,12 @@ import PublicRoute from './utils/PublicRoute';
 import PrivateRoute from './utils/PrivateRoute';
 import SignIn from './components/Pages/SignIn';
 import Dashboard from './components/Pages/Dashboard';
+import Users from './components/Users';
 
-function App() {
+function App(props) {
+  const handleRenderProps=(routerProps) => {
+    return(<PostList {...routerProps}/>)
+  }
   return (
     <Router>
     <Provider store={store}>
@@ -37,8 +41,10 @@ function App() {
           <PublicRoute path="/signin" component={SignIn} />
           <PrivateRoute path="/dashboard" exact component={Dashboard}></PrivateRoute>
           <PrivateRoute path="/details" component={CrudForm}></PrivateRoute>
-          <PrivateRoute path="/posts" exact component={PostList}></PrivateRoute>
-          <PrivateRoute path="/postdetails/:id" component={PostDetails}></PrivateRoute>
+          {/* <PrivateRoute path="/posts"  component={PostList}></PrivateRoute> */}
+          <PrivateRoute path='/posts' component={PostList}/>
+          <PrivateRoute path='/users' component={Users}/>
+          {/* <PrivateRoute path="/postdetails/:id" component={PostDetails}></PrivateRoute> */}
         </Switch>
         {/* <CrudForm/> */}
         {/* <Form/> */}
