@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {Link, Route, BrowserRouter as Router} from 'react-router-dom'
 import UserDetails from './UserDetails'
-
+import './Users.scss'
 class Users extends Component {
 	constructor(props) {
 		super(props)
@@ -31,14 +31,19 @@ class Users extends Component {
 		//let match = this.props.match
 		return (
 			<Router>
-				<div className="container">
-					List of Users
-					{users.length
-									? users.map(user => <div key={user.id}><Link to={`/users/${user.id}`}><p><strong>{user.name}</strong></p></Link></div>)
-						: null}
-						{errorMsg ? <div>{errorMsg}</div> : null}
-					<Route path={`/users/:id`} render={routerProps => <UserDetails {...routerProps}  users={users} />} />
-				</div>
+				<>
+					{/* <h1>Users</h1> */}
+					<div className="flex-container">
+						
+						{users.length
+										? users.map(user => <div className="user-card" key={user.id}><Link to={`/users/${user.id}`}><strong>{user.name}</strong></Link></div>)
+							: null}
+							{errorMsg ? <div>{errorMsg}</div> : null}
+					</div>
+					<div className="userdetail-container">
+						<Route path={`/users/:id`} render={routerProps => <UserDetails {...routerProps}  users={users} />} />
+					</div>
+				</>
 		</Router>
 		)
 	}

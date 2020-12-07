@@ -27,12 +27,10 @@ class PostDetails extends Component {
     let match = this.props.match
     let postdetails = posts.find(element => element.id === parseInt(match.params.id))
     return (
-      <>
-        <h2>Post Details: </h2>
-        <p><strong>{postdetails.id}</strong></p>
-        <p><strong>{postdetails.title}</strong></p>
-        <p><strong>{postdetails.body}</strong></p>
-      </>
+      <div className="post-detail-card">
+        <p><strong>Post Title : {postdetails.title}</strong></p>
+        <p><strong>Description: {postdetails.body}</strong></p>
+      </div>
     );
   }
 }

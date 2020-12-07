@@ -1,0 +1,36 @@
+.flex-container {
+    display: flex;  
+    justify-content: space-around;
+    flex-flow: row wrap;
+    padding: 0;
+    margin: 0;
+  }
+
+  .user-card {
+    background: dodgerblue;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  .user-card a, .user-card a:hover {color : #fff}
+
+  .userdetail-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0 10px;
+  }
+  .user-detail-card {
+      display: flex;
+      flex-direction:column;
+      padding: 5px;
+      background: lightgray;
+      margin-top: 10px;
+      flex:1;
+  }

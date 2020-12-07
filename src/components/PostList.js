@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {Link, Route, BrowserRouter as Router} from 'react-router-dom'
 import PostDetails from './PostDetails'
+import './posts.scss'
 class PostList extends Component {
 	constructor(props) {
 		super(props)
@@ -30,10 +31,9 @@ class PostList extends Component {
 		let match = this.props.match
 		return (
 			<Router>
-				<div className="container">
-					List of posts
+				<div className="post-container">
 					{posts.length
-									? posts.slice(0, 10).map(post => <div key={post.id}><Link to={`/posts/${post.id}`}><p><strong>{post.title}</strong></p></Link></div>)
+									? posts.slice(0, 10).map(post => <div className="posts-card" key={post.id}><Link to={`/posts/${post.id}`}><p><strong>{post.title}</strong></p></Link></div>)
 						: null}
 						{errorMsg ? <div>{errorMsg}</div> : null}
 					<Route path={`/posts/:id`} render={routerProps => <PostDetails {...routerProps}  posts={posts} />} />

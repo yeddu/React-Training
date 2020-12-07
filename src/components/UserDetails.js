@@ -9,17 +9,19 @@ class UserDetails extends Component {
       users : []
     }
   }
-  render() {
+  render() {  
     const users = this.props.users
     let match = this.props.match
+    //alert(match.params.id);
     let userdetails = users.find(element => element.id === parseInt(match.params.id))
     return (
-      <>
-        <h2>User Details: </h2>
-        <p><strong>{userdetails.id}</strong></p>
-        <p><strong>{userdetails.name}</strong></p>
-        <p><strong>{userdetails.email}</strong></p>
-      </>
+      <div className="user-detail-card">
+        <p><strong>User Id : {userdetails.id}</strong></p>
+        <p><strong>Name : {userdetails.name}</strong></p>
+        <p><strong>E-Mail : {userdetails.email}</strong></p>
+        <p><strong>Phone : {userdetails.phone}</strong></p>
+        <p><strong>Website : {userdetails.website}</strong></p>
+      </div>
     );
   }
 }

@@ -1,28 +1,31 @@
 import React from 'react';
 import { login } from '../../utils/common';
-
+import './Signin.scss'
 const SignIn = (props) => {
 
-    const handleLogin = () => {
+    const handleLogin = (event) => {
+        event.preventDefault();
         login();
         props.history.push('/dashboard');
     }
 
     return (
-        <div className="">
-            <div className="container">
-                <div className="row col-lg-12">
-                    <div className="col-lg-4"></div>
-                    <div className="col-lg-4"><h1>Sign in</h1></div>
-                    <div className="col-lg-4"></div>
-                </div>
-                <div className="row col-lg-12 ">
-                    <div className="col-lg-4"></div>
-                    <div className="col-lg-4">
-                        <button className="btn btn-primary" onClick={() => handleLogin()}>Click here to log in</button>
+        <div className="flex-container">
+            <div className="login-item">
+                <h1>Sign In </h1>
+                <form action="" method="get" className="form form-login" onSubmit={handleLogin}>
+                    <div className="form-field">
+                        <input id="login-username" type="text" className="form-input" placeholder="Username" required/>
                     </div>
-                    <div className="col-lg-4"></div>
-                </div>
+
+                    <div className="form-field">
+                        <input id="login-password" type="password" className="form-input" placeholder="Password" required/>
+                    </div>
+
+                    <div className="form-field">
+                        <input type="submit" value="Sign In"/>
+                    </div>
+                </form>
             </div>
         </div>
     );

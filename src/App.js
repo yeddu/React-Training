@@ -18,7 +18,7 @@ import ButtonWithScss from './components/ButtonWithScss'
 import CrudForm from './components/CrudForm'
 // import CrudList from './components/CrudList'
 import PostDetails from './components/PostDetails'
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-router-dom'
 import Nav from './components/Pages/Nav';
 import Home from './components/Pages/Home'
 import PublicRoute from './utils/PublicRoute';
@@ -37,7 +37,7 @@ function App(props) {
       <div className="container">
         <Nav/>
         <Switch>
-          <PublicRoute path="/" exact component={Home}></PublicRoute>
+          <PublicRoute path="/" exact component={Dashboard}></PublicRoute>
           <PublicRoute path="/signin" component={SignIn} />
           <PrivateRoute path="/dashboard" exact component={Dashboard}></PrivateRoute>
           <PrivateRoute path="/details" component={CrudForm}></PrivateRoute>

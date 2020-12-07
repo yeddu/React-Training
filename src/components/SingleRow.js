@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import { ReactReduxContext } from 'react-redux'
 
 class SingleRow extends Component {
   render() {
   return (
-    <>
+    <><ReactReduxContext.Consumer>
+    {({ store }) => {
+      console.log(store.getState())
+    }}
+  </ReactReduxContext.Consumer>
         <tr>
             <td><img src={this.props.list.profile_pic} height="50" width=""/></td>
             <td>{this.props.list.name}</td>
